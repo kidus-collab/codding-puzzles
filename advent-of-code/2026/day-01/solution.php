@@ -2,9 +2,15 @@
 
 declare(strict_types=1);
 
-function solve(): void
-{
-    echo "Start solving Advent of Code Day 01 here." . PHP_EOL;
-}
+/* 
+   * So what expected of me is to find max joltage from the batteries on problem txt 
+   * First parse / input the data 
+   * Apply dsa or func for the sum and detection 
 
-solve();
+*/
+
+// Read input form file 
+$input = file_get_contents('problem.txt'); 
+
+// Split the input into an array of lines 
+$Bank = explode("\n" , $input);
