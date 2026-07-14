@@ -15,11 +15,15 @@ $input = file_get_contents('problem.txt');
 // Split the input into an array of lines 
 $Bank = explode("\n" , $input);
 $Bank = array_filter(array_map('trim', $Bank));
-
-   
-//
 $totalOutputJoltage = 0; 
+
 
 foreach ($Bank as $battery) { 
    $bank = trim($Bank);
+
+   // if(empty($bank)) {  continue;  }
 }
+
+   $maxBankjoltage = 0; 
+   $len = strlen($Bank); 
+
