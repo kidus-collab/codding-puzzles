@@ -24,16 +24,19 @@ $mergename = array_merge($name , $name2);
 $databse = [ ['name'=>'kidus' , 'age'=>23] , ['name'=>'meron' , 'age'=>22] , ];
 
 foreach($databse as $data) { 
-    echo $data['name'] . ":" . $data['price']; 
+    if($data['age'] < 23) { 
+        echo $data['name'] ;
+    }
 }
 
+/*
 $i = 0;
-
-
 while($i < count($databse)) { 
     echo $databse[$i]['name']['age']; 
     echo '\n'; 
+    $i++; 
 }
+*/
 
 /* 
 
@@ -42,4 +45,24 @@ for($i=0; $i < count(databse) ; $i++) {
 }
  */
 
+
+
 ?> 
+
+<!--
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+ <title>PHP Practice</title> 
+</head> 
+<body> 
+ <h1>products</h1>
+ <ul>
+     <li>hi</li>
+</ul>
+
+</body> 
+</html> 
+
+--> 
