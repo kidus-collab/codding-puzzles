@@ -31,7 +31,7 @@ foreach($databse as $data) {
 
 /*
 $i = 0;
-while($i < count($databse)) { 
+while($i < count($sadatabse)) { 
     echo $databse[$i]['name']['age']; 
     echo '\n'; 
     $i++; 

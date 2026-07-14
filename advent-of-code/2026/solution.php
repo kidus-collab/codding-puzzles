@@ -27,3 +27,8 @@ foreach ($Bank as $battery) {
    $maxBankjoltage = 0; 
    $len = strlen($Bank); 
 
+   // outer loop select first battery 
+ for($i = 0; $i< len-1 ; $i++) { 
+    
+ }
+
