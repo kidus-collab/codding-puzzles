@@ -14,34 +14,37 @@ class user {
 }
 
 class BankAccount { 
-    public $account_owner; 
+    public $accountOwner; 
     private $balance ;
-    static $account;  
-    final $minbalance = 0 ; 
-    
-    public function _construct() { 
-        $this->account_owner = $account_owner; 
+    private final  MIN_BALANCE = 0; 
+    private static $accountCount = 0; 
+
+    public function _construct($accountOwner , $balance) { 
+        $this->accountOwner = $accountOwner; 
         $this->balance = $balance; 
     }
     // method 
-    public function deposit() { 
-        if($balance > 0) { 
-            echo "Amount has been deposited " . $balance ; 
+    public function deposit($amount) { 
+        if($amount > 0) { 
+            $this->balance += $amount; 
+
         }
     }
-    public function deposit() { 
-        if($balance > 0) { 
-            echo "Amount has been deposited " . $balance ; 
+    public function withdraw($account) { 
+        if($balance < $account) { 
+            echo "Amount has been withdraw " . $balance ; 
         }
     }
     public function getBalance() { 
-        return this->getBalance() ; 
+        return this->getBalance(); 
     }
 }
 
 $accountOne = new BankAccount();
 $accounttwo = new BankAccount();
 
+$accountOne.deposit(); 
+$accounttwo.withdraw();
 
 $userOne = new User(); 
 $userOne->login(); 
