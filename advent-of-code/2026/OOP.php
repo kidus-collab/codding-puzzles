@@ -1,9 +1,13 @@
+<?php 
+
+declare(strict_types=1);
+
 class user { 
   
    public $email; 
    public $name; 
    
-   public function _construct() { 
+   public function __construct() { 
        $this->email = $email; 
        $this->name = $name; 
    }
@@ -16,7 +20,7 @@ class user {
 class BankAccount { 
     public $accountOwner; 
     private $balance ;
-    private final  MIN_BALANCE = 0; 
+    private const  MIN_BALANCE = 0; 
     private static $accountCount = 0; 
 
     public function _construct($accountOwner , $balance) { 
@@ -32,8 +36,8 @@ class BankAccount {
             echo "Deposited: $".$amount .PHP_EOL; 
         }
     }
-    public function withdraw($account) { 
-        if($account > 0 && $this->balance - $amount >= self::MIN_BALANCE) { 
+    public function withdraw($amount) { 
+        if($amount > 0 && $this->balance - $amount >= self::MIN_BALANCE) { 
             $this->balance -= $amount; 
              echo "Withdraw: $" . $amount . PHP_EOL; 
         } else { 
@@ -41,18 +45,27 @@ class BankAccount {
         }
     }
     public function getBalance() { 
-        return this->balance; 
+        return $this->balance; 
     }
-    public funtction getAccountCount() { 
+    public function getAccountCount() { 
         return self::$accountcount; 
     }
 }
 
+class savingsAccount extends BankAccount { 
+
+}
+
+
+
 $accountOne = new BankAccount("kidus" , 1000);
 $accounttwo = new BankAccount("meron" , 30000);
+$savingsAccount = new savingsAccount("Kidus-savings" , 1000); 
 
-$accountOne.deposit(5000); 
-$accountOne.withdraw(2000);
+echo "The amount I have in savings is " . $savingsAccount->getBalance() . "birr" ; 
+
+$accountOne->deposit(5000); 
+$accountOne->withdraw(2000);
 
 
-echo "Remaining Balance on Account one is : birr" . $accountOne->getBalance() . "/n"; 
+echo "Remaining Balance on Account one is : birr" . $accountOne->getBalance() . "\n"; 
