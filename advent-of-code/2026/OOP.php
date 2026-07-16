@@ -22,29 +22,37 @@ class BankAccount {
     public function _construct($accountOwner , $balance) { 
         $this->accountOwner = $accountOwner; 
         $this->balance = $balance; 
+
+        self::$accountCount++;
     }
     // method 
     public function deposit($amount) { 
         if($amount > 0) { 
             $this->balance += $amount; 
-
+            echo "Deposited: $".$amount .PHP_EOL; 
         }
     }
     public function withdraw($account) { 
-        if($balance < $account) { 
-            echo "Amount has been withdraw " . $balance ; 
+        if($account > 0 && $this->balance - $amount >= self::MIN_BALANCE) { 
+            $this->balance -= $amount; 
+             echo "Withdraw: $" . $amount . PHP_EOL; 
+        } else { 
+             echo "withdraw failed." . PHP_EOL; 
         }
     }
     public function getBalance() { 
-        return this->getBalance(); 
+        return this->balance; 
+    }
+    public funtction getAccountCount() { 
+        return self::$accountcount; 
     }
 }
 
-$accountOne = new BankAccount();
-$accounttwo = new BankAccount();
+$accountOne = new BankAccount("kidus" , 1000);
+$accounttwo = new BankAccount("meron" , 30000);
 
-$accountOne.deposit(); 
-$accounttwo.withdraw();
+$accountOne.deposit(5000); 
+$accountOne.withdraw(2000);
 
-$userOne = new User(); 
-$userOne->login(); 
+
+echo "Remaining Balance on Account one is : birr" . $accountOne->getBalance() . "/n"; 
