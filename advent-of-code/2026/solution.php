@@ -23,9 +23,9 @@ foreach ($Bank as $battery) {
    $len = strlen($battery); 
    
    // outer loop select first battery in each bank  
- for($i = 0; $i < len-1 ; $i++) {  
+ for($i = 0; $i < $len-1 ; $i++) {  
     for($j= $i + 1; $j < $len ; $j++){
-         $joltage=(int)($battery[i] . $battery[j]);
+         $joltage=(int)($battery[$i] . $battery[$j]);
 
          if($joltage > $maxBankjoltage) { 
               $maxBankjoltage = $joltage; 
