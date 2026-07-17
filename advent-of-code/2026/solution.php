@@ -6,7 +6,6 @@ declare(strict_types=1);
    * So what expected of me is to find max joltage from the batteries on problem txt 
    * First parse / input the data 
    * Apply dsa or func for the sum and detection 
-
 */
 
 // Read input form file 
